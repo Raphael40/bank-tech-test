@@ -3,18 +3,9 @@ class Account
     @balance = 0
   end
   
-  def print_balance
+  def print_statement
     puts @balance
-    return @balance
+    return 'date || credit || debit || balance'
   end
 
-  def deposit(sum)
-    puts sum
-    @balance += sum
-  end
-
-  def withdraw(sum)
-    puts sum
-    @balance -= sum
-  end
 end

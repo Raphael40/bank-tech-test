@@ -22,38 +22,37 @@ mvp model:
 
 class Account
   inititalize
-    balance = 0
+    @balance = 0
+    @transactions = []
   end
 
 
   print_balance
-    print balance
+    template = 'date || credit || debit || balance'
+    print template \n + || + balance
   end
 
   deposit(x)
-    blaance + x
+    balance + x
+    transactions << [x || balance]
   end
 
   withdraw(x)
-    blaance - x
+    balance - x
   end
 end
 
-mvp test examples:
+new plan:
+mvp:
 
 account = Account.new
-account.print to eq 0
-
-account = Account.new
-account.deposit(1000)
-account.print to eq 1000
-
-// features for blocking negative withdrawals have not been inlcuded in user story
-account = Account.new
-account.withdraw(500)
-account.print to eq -500
+account.print = 'date || credit || debit || balance'
 
 account = Account.new
 account.deposit(1000)
+account.print = 'date || credit || debit || balance' \n || || || 1000
+
+
+account = Account.new
 account.withdraw(500)
-account.print to eq 1000
+account.print = 'date || credit || debit || balance' \n || || || -500
