@@ -23,7 +23,7 @@ mvp model:
 class Account
   inititalize
     @balance = 0
-    @transactions = []
+    @transactions = [[1000, 1000]]
   end
 
 
