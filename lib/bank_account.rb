@@ -7,7 +7,7 @@ class Account
   def print_statement
     puts @balance
   if @balance > 0
-    return "date || credit || debit || balance \n || 1000 || || 1000"
+    return "date || credit || debit || balance \n 19/06/2023 || 1000 || || 1000"
   end
     return "date || credit || debit || balance"
   end

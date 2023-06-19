@@ -1,7 +1,7 @@
 require 'bank_account'
 
 RSpec.describe 'Account' do
-  context 'print, deposit, withdraw' do
+  context 'basic print, deposit and date' do
     it 'returns an empty statement' do
       account = Account.new
 
@@ -18,9 +18,20 @@ RSpec.describe 'Account' do
     it 'includes 1000 in twice after depositing 1000' do
       account = Account.new
       account.deposit(1000)
-      result = account.print_statement.gsub(/[^1000]/, '')
+      result = account.print_statement.scan(/1000/)
 
-      expect(result).to eq "10001000"
+      expect(result).to eq ["1000", "1000"]
     end
+
+    it 'also includes time for one deposit' do
+      account = Account.new
+      account.deposit(1000)
+
+      expect(account.print_statement).to eq "date || credit || debit || balance \n 19/06/2023 || 1000 || || 1000"
+    end
+  end
+
+  context 'multiple deposits on statement' do
+    
   end
 end
