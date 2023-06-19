@@ -14,5 +14,12 @@ RSpec.describe 'Account' do
 
       expect(account.print_balance).to eq 1000
     end
+
+    it 'returns a balance of -500 when print_balance is called after withdrawing 500' do
+      account = Account.new
+      account.withdraw(500)
+
+      expect(account.print_balance).to eq -500
+    end
   end
 end
