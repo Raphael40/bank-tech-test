@@ -1,0 +1,59 @@
+Code breakdown: 
+The user has a bank account (class)
+the user can deposit money
+the user can withdraw money
+the date of transactions and withdrawals is recorded
+a record of all transactions can be printed
+
+mvp: 
+A single account class with a balance variable set to 0.
+A print function that prints the balance
+A deposit function that adds to the total by a chosen amount.
+A withdraw function that subtracts from the total
+
+next features: 
+print function can print the balance history
+print function also prints the deposit or withdrawal amount per transaction
+
+final feature: 
+the date of each transaction is recorded and included in print
+
+mvp model:
+
+class Account
+  inititalize
+    balance = 0
+  end
+
+
+  print 
+    print balance
+  end
+
+  deposit(x)
+    blaance + x
+  end
+
+  withdraw(x)
+    blaance - x
+  end
+end
+
+mvp test examples:
+
+account = Account.new
+account.print to eq 0
+
+account = Account.new
+account.deposit(1000)
+account.print to eq 1000
+
+// features for blocking negative withdrawals have not been inlcuded in user story
+account = Account.new
+account.withdraw(500)
+account.print to eq -500
+
+account = Account.new
+account.deposit(1000)
+account.withdraw(500)
+account.print to eq 1000
