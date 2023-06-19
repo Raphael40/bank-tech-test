@@ -8,5 +8,11 @@ RSpec.describe 'Account' do
       expect(account.print_balance).to eq 0
     end
 
+    it 'returns a balance of 1000 when print_balance is called after deposit 1000' do
+      account = Account.new
+      account.deposit(1000)
+
+      expect(account.print_balance).to eq 1000
+    end
   end
 end

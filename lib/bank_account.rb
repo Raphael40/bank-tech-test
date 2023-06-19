@@ -8,5 +8,8 @@ class Account
     return @balance
   end
 
-  
+  def deposit(income)
+    puts income
+    @balance += income
+  end
 end
