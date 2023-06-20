@@ -58,7 +58,7 @@ account.withdraw(500)
 account.print = 'date || credit || debit || balance' \n || || || -500
 
  context 'multiple transactions on statement' do
-    xit 'has records for multiple deposits' do
+    it 'has records for multiple deposits' do
       account = Account.new
       account.deposit(1000)
       account.deposit(1000)
