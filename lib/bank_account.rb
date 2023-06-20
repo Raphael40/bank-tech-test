@@ -7,7 +7,7 @@ class Account
   def print_statement
     puts @transactions
   if @balance > 0
-    return "date || credit || debit || balance \n#{@transactions.join(' || ')}"
+    return "date || credit || debit || balance \n#{@transactions.map { |transaction| transaction.join(' || ') }.join(" \n")}"
   end
     return "date || credit || debit || balance"
   end

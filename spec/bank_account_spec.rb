@@ -32,4 +32,14 @@ RSpec.describe 'Account' do
     end
   end
  
+  context 'multiple transactions on statement' do
+    it 'has records for multiple deposits' do
+      account = Account.new
+      account.deposit(1000)
+      account.deposit(1000)
+      date = Time.now.strftime("%d/%m/%Y")
+  
+      expect(account.print_statement).to eq "date || credit || debit || balance \n#{date} || 1000 ||  || 1000 \n#{date} || 1000 ||  || 2000"
+    end
+  end
 end
