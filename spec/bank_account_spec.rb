@@ -52,4 +52,25 @@ RSpec.describe 'Account' do
       expect(account.print_statement).to eq "date || credit || debit || balance \n#{date} || 1000 ||  || 1000 \n#{date} || 1000 ||  || 2000 \n#{date} || 500 ||  || 2500"
     end
   end
+
+  context 'adding in the withdraw function' do
+    it 'allows one to withdraw money' do
+      account = Account.new
+      account.withdraw(1000)
+      date = Time.now.strftime("%d/%m/%Y")
+
+      expect(account.print_statement).to eq "date || credit || debit || balance \n#{date} ||  || 1000 || -1000"
+    end
+  end
+
+  it 'lets you withdraw and deposit at once' do
+    account = Account.new
+    account.deposit(1000)
+    account.deposit(1000)
+    account.withdraw(800)
+    account.deposit(500)
+    date = Time.now.strftime("%d/%m/%Y")
+
+    expect(account.print_statement).to eq "date || credit || debit || balance \n#{date} || 1000 ||  || 1000 \n#{date} || 1000 ||  || 2000 \n#{date} ||  || 800 || 1200 \n#{date} || 500 ||  || 1700"
+  end
 end

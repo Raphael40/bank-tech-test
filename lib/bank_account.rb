@@ -5,11 +5,11 @@ class Account
   end
   
   def print_statement
-    puts @transactions
-  if @balance > 0
-    return "date || credit || debit || balance \n#{@transactions.map { |transaction| transaction.join(' || ') }.join(" \n")}"
-  end
-    return "date || credit || debit || balance"
+    if @transactions.length > 0
+      return "date || credit || debit || balance \n#{@transactions.map { |transaction| transaction.join(' || ') }.join(" \n")}"
+    else
+      return "date || credit || debit || balance"
+    end
   end
 
   def deposit(sum)
@@ -17,5 +17,12 @@ class Account
 
     @balance += sum
     @transactions << [date, sum, '', @balance]
+  end
+
+  def withdraw(sum)
+    date = Time.now.strftime("%d/%m/%Y")
+
+    @balance -= sum
+    @transactions << [date, '', sum, @balance]
   end
 end
