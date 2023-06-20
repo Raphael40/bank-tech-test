@@ -5,14 +5,17 @@ class Account
   end
   
   def print_statement
-    puts @balance
+    puts @transactions
   if @balance > 0
-    return "date || credit || debit || balance \n 19/06/2023 || 1000 || || 1000"
+    return "date || credit || debit || balance \n#{@transactions.join(' || ')}"
   end
     return "date || credit || debit || balance"
   end
 
   def deposit(sum)
+    date = Time.now.strftime("%d/%m/%Y")
+
     @balance += sum
+    @transactions << [date, sum, '', @balance]
   end
 end

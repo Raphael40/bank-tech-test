@@ -23,15 +23,13 @@ RSpec.describe 'Account' do
       expect(result).to eq ["1000", "1000"]
     end
 
-    it 'also includes time for one deposit' do
+    it 'also includes todays date for one deposit' do
       account = Account.new
       account.deposit(1000)
+      date = Time.now.strftime("%d/%m/%Y")
 
-      expect(account.print_statement).to eq "date || credit || debit || balance \n 19/06/2023 || 1000 || || 1000"
+      expect(account.print_statement).to eq "date || credit || debit || balance \n#{date} || 1000 ||  || 1000"
     end
   end
-
-  context 'multiple deposits on statement' do
-    
-  end
+ 
 end
