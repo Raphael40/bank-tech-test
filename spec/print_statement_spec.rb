@@ -8,8 +8,7 @@ RSpec.describe 'Print_statement' do
     allow(account).to receive(:instance_variable_get).with(:@transactions).and_return(transaction)
 
     statement = Print_statement.new
-    statement.add_account(account)
   
-    expect(statement.print_statement).to eq "date || credit || debit || balance \n#{date} || 1000.00 ||  || 1000.00"
+    expect(statement.print_statement(account)).to eq "date || credit || debit || balance \n#{date} || 1000.00 ||  || 1000.00"
   end
 end
