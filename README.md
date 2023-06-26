@@ -56,6 +56,6 @@ puts account.print_statement
 --------------------------------------------------------------------
 See these screenshots for a demonstration:
 
-![single deposit and withdrawal](Screenshot%202023-06-23%20at%2015.27.24.png)
+![single deposit and withdrawal](./images/Screenshot%202023-06-23%20at%2015.27.24.png)
 
-![Multiple transactions through multiple account classes](Screenshot%202023-06-23%20at%2015.33.42.png)
+![Multiple transactions through multiple account classes](./images/Screenshot%202023-06-23%20at%2015.33.42.png)
