@@ -1,6 +1,6 @@
 # bank-tech-test
 Mock interview tech test
-This is a simple implementation of an Account class that allows you to perform basic banking operations such as depositing and withdrawing money, as well as printing a statement of transactions.
+This is a simple implementation of an Account class that allows you to perform basic banking operations such as depositing and withdrawing money, as well as Print_statement class that prints a statement of transactions in the correct format.
 
 ## Installation instructions
 make sure you are on the correct version of Ruby
@@ -45,7 +45,17 @@ To withdraw money from the account, use the withdraw method and pass the amount 
 ```
 account.withdraw(amount)
 ```
-To print a statement of all transactions made on the account, use the print_statement method:
+To print a statement of all transactions made on the account, instantiate a Print_class method:
+```
+statement = Print_statement.new
+```
+Then pass the account into the print_statement method as an argument and it will compile a statement out of the transactions
 ```
 puts account.print_statement
 ```
+--------------------------------------------------------------------
+See these screenshots for a demonstration:
+
+[single deposit and withdrawal](./images/Screenshot%202023-06-23%20at%2015.27.24.png)
+
+[Multiple transactions through multiple account classes](./images/Screenshot%202023-06-23%20at%2015.33.42.png)
