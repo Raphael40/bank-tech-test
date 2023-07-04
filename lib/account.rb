@@ -6,9 +6,6 @@ class Account
 
   def deposit(sum)
     date = Time.now.strftime('%d/%m/%Y')
-    # if sum.is_a?(Integer) || sum.is_a?(Float)
-    #   sum = sum.round(2)
-    # end
   
     @balance += sum
     @transactions << [date, "#{sum}.00", '', "#{@balance}0"]
@@ -16,9 +13,6 @@ class Account
 
   def withdraw(sum)
     date = Time.now.strftime('%d/%m/%Y')
-    # if sum.is_a?(Integer) || sum.is_a?(Float)
-    #   sum = sum.round(2)
-    # end
   
     @balance -= sum
     @transactions << [date, '', "#{sum}.00", "#{@balance}0"]
